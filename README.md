@@ -1,3 +1,5 @@
+![D9493A89-0115-4E10-B435-67F1B6CABED4](https://github.com/user-attachments/assets/3876c2bb-9f3d-4456-ab51-dc7722ac8c08)
+
 This Gatsby starter is powered by [TinaCMS](https://app.tina.io) for you and your team to visually live edit the structured content of your website. ✨
 
 The content is managed through Markdown and JSON files stored in your GitHub repository, and queried through Tina GraphQL API.
