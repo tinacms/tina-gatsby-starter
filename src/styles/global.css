@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ul {
+    @apply list-disc my-4 pl-8;
+}
+
+ol {
+    @apply list-decimal my-4 pl-8;;
+}
+
+li {
+    @apply mb-2;
+}
