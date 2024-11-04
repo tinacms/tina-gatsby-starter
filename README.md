@@ -1,49 +1,69 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+This Gatsby starter is powered by [TinaCMS](https://app.tina.io) for you and your team to visually live edit the structured content of your website. ✨
 
-## 🚀 Quick start
+The content is managed through Markdown and JSON files stored in your GitHub repository, and queried through Tina GraphQL API.
 
-1.  **Create a Gatsby site.**
+## Requirements
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+- Git, [Node.js Active LTS](https://nodejs.org/en/about/releases/), yarn installed for local development.
+- A [TinaCMS](https://app.tina.io) account for live editing.
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
+## Local Development
 
-2.  **Start developing.**
+Install the project's dependencies:
 
-    Navigate into your new site’s directory and start it up.
+```
+yarn install
+```
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Run the project locally:
 
-3.  **Open the code and start customizing!**
+```
+yarn dev
+```
+### Local URLs
 
-    Your site is now running at http://localhost:8000!
+- http://localhost:3000 : browse the website
+- http://localhost:3000/admin : connect to Tina Cloud and go in edit mode
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+### Building the Starter Locally (Using the hosted content API)
 
-4.  **Learn more**
+Replace the `.env.example`, with `.env`
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+```
+NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the project you create at app.tina.io>
+TINA_TOKEN=<get this from the project you create at app.tina.io>
+NEXT_PUBLIC_TINA_BRANCH=<Specify the branch with Tina configured>
+```
 
-## 🚀 Quick start (Netlify)
+Build the project:
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+```bash
+yarn build
+```
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+## Getting Help
+
+To get help with any TinaCMS challenges you may have:
+
+- Visit the [documentation](https://tina.io/docs/) to learn about Tina.
+- [Join our Discord](https://discord.gg/zumN63Ybpf) to share feedback.
+- Visit the [community forum](https://community.tinacms.org/) to ask questions.
+- Get support through the chat widget on the TinaCMS Dashboard
+- [Email us](mailto:support@tina.io) to schedule a call with our team and share more about your context and what you're trying to achieve.
+- [Search or open an issue](https://github.com/tinacms/tinacms/issues) if something is not working.
+- Reach out on Twitter at [@tina_cms](https://twitter.com/tina_cms).
+
+## Development tips
+
+### Visual Studio Code GraphQL extension
+
+[Install the GraphQL extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) to benefit from type auto-completion.
+
+### Typescript
+
+A good way to ensure your components match the shape of your data is to leverage the auto-generated TypeScript types.
+These are rebuilt when your `tina` config changes.
+
+## LICENSE
+
+Licensed under the [Apache 2.0 license](./LICENSE).
