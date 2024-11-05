@@ -8,9 +8,9 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "npx tinacms dev -c \"gatsby develop\"",
+    "dev": "tinacms dev -c \"gatsby develop\"",
     "start": "gatsby develop",
-    "build": "tinacms build --no-client-build-cache && gatsby build",
+    "build": "tinacms build && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"

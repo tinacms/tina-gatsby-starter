@@ -33,7 +33,7 @@ export default defineConfig({
         label: "Posts",
         path: "content/posts",
         ui: {
-          router: ({ document }: { document: { _sys: { template: string; filename: string } } }) => {
+          router: ({ document }) => {
             return `/${document._sys.template}/${document._sys.filename}`;
           },
         },

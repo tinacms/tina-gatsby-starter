@@ -7,7 +7,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
 
   const { createPage } = actions
 
-  const postsResult = await client.queries.postConnection({ first: 1000 });
+  const postsResult = await client.queries.postConnection();
   const postsEdges = postsResult.data.postConnection.edges;
 
   postsEdges?.forEach((postEdge) => {
@@ -24,5 +24,5 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
 }
 
 exports.onCreateDevServer = ({ app }: { app: Express }) => {
-  app.use("/admin", express.static("public/admin"));
+  app.use("/admin", express.static("static/admin"));
 };
