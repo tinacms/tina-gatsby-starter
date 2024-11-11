@@ -29,6 +29,6 @@ export default IndexPage;
 export const Head: HeadFC = () => <title>Home Page</title>;
 
 export async function getServerData() {
-  const postsResult = await client.queries.postConnection({ first: 1000 });
+  const postsResult = await client.queries.postConnection();
   return { props: postsResult.data.postConnection.edges };
 }
