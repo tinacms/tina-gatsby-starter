@@ -5,3 +5,5 @@ src/gatsby-types.d.ts
 
 node_modules
 .env
+.yarn
+*-lock.*
