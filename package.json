@@ -33,6 +33,6 @@
     "typescript": "^5.3.3"
   },
   "resolutions": {
-    "graphql": "^15.8.0"
+    "graphql": "15.8.0"
   }
 }
