@@ -13,6 +13,9 @@ The content is managed through Markdown and JSON files stored in your GitHub rep
 
 Install the project's dependencies:
 
+> [!NOTE]
+> If you are using `npm` you may need to add `--legacy-peer-deps` to your install. i.e. `npm install --legacy-peer-deps`
+
 ```
 yarn install
 ```
