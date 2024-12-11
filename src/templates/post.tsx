@@ -2,7 +2,7 @@ import React from "react";
 import { client } from "../../tina/__generated__/client";
 import { useTina, tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { navigate } from "gatsby";
+import { Link } from "gatsby";
 import Layout from "../components/layout";
 
 const PostTemplate = ({ serverData }: any) => {
@@ -14,14 +14,12 @@ const PostTemplate = ({ serverData }: any) => {
 
   return (
     <Layout>
-      <button
-        onClick={() => {
-          navigate("/");
-        }}
+      <Link
+        to="/"
         className="flex items-center bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-gray-700 transition duration-200 ease-in-out"
       >
         🏚️ Go back home
-      </button>
+      </Link>
       <h1 className="text-4xl font-bold my-4">Post page</h1>
       <h1
         className="text-3xl font-semibold my-8 text-orange-400"
