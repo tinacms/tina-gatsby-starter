@@ -16,7 +16,7 @@ const PostTemplate = ({ serverData }: any) => {
     <Layout>
       <Link
         to="/"
-        className="flex items-center bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-gray-700 transition duration-200 ease-in-out"
+        className="items-center bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-gray-700 transition duration-200 ease-in-out"
       >
         🏚️ Go back home
       </Link>
