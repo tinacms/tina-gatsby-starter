@@ -6,3 +6,4 @@ src/gatsby-types.d.ts
 .env
 .yarn
 *-lock.*
+*.lock
