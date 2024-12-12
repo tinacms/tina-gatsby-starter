@@ -1,16 +1,14 @@
 import React from "react";
 import { client } from "../../tina/__generated__/client";
-import { useTina, tinaField } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+
 import { Link } from "gatsby";
 import Layout from "../components/layout";
+import PostClient from "../components/post-client";
 
-const PostTemplate = ({ serverData }: any) => {
-  const { data } = useTina({
-    query: serverData.query,
-    variables: serverData.variables,
-    data: serverData.data,
-  });
+const PostTemplate = (props) => {
+  console.log("Post Template Log:", props);
+
+  const { serverData } = props;
 
   return (
     <Layout>
@@ -21,23 +19,18 @@ const PostTemplate = ({ serverData }: any) => {
         🏚️ Go back home
       </Link>
       <h1 className="text-4xl font-bold my-4">Post page</h1>
-      <h1
-        className="text-3xl font-semibold my-8 text-orange-400"
-        data-tina-field={tinaField(data?.post, "title")}
-      >
-        {data?.post?.title}
-      </h1>
-
-      <div className="mb-6" data-tina-field={tinaField(data?.post, "body")}>
-        <TinaMarkdown content={data?.post?.body} />
-      </div>
+      <PostClient {...serverData} />
     </Layout>
   );
 };
 
 export default PostTemplate;
 
-export async function getServerData({ pageContext }: any) {
+export async function getServerData(props) {
+  console.log("getServerData Fired", props);
+
+  const { pageContext } = props;
+
   const postData = await client.queries.post({
     relativePath: pageContext.relativePath,
   });

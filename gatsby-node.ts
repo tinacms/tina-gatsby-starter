@@ -1,27 +1,29 @@
-import express, { Express } from "express";
-import type { GatsbyNode } from 'gatsby';
+import express, { type Express } from "express";
+import type { GatsbyNode } from "gatsby";
 import client from "./tina/__generated__/client";
-import path from "path";
+import path from "node:path";
 
-export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
-
-  const { createPage } = actions
+export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
+  const { createPage } = actions;
 
   const postsResult = await client.queries.postConnection();
   const postsEdges = postsResult.data.postConnection.edges;
 
+  // biome-ignore lint/complexity/noForEach: <explanation>
   postsEdges?.forEach((postEdge) => {
     const post = postEdge?.node;
-    if (post)
+    if (post) {
+      console.log(path.resolve("src/templates/post.tsx"));
       createPage({
-        path: "post/"+post._sys.filename,
-        component: path.resolve(`./src/templates/post.tsx`),
-        context:{
+        path: `post/${post._sys.filename}`,
+        component: path.resolve("src/templates/post.tsx"),
+        context: {
           relativePath: post._sys.relativePath,
-        }
+        },
       });
+    }
   });
-}
+};
 
 exports.onCreateDevServer = ({ app }: { app: Express }) => {
   app.use("/admin", express.static("static/admin"));

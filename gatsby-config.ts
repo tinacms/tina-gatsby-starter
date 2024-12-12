@@ -1,6 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  flags: {
+    PARTIAL_HYDRATION: true,
+  },
   siteMetadata: {
     // Uncomment and add your site data here
     // siteUrl: `https://www.yourdomain.tld`,
