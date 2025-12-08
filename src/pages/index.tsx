@@ -33,7 +33,6 @@ export const Head: HeadFC = () => <title>Home Page</title>;
 export async function getServerData() {
   try {
     const postsResult = await client.queries.postConnection();
-    console.log("postsResult", postsResult.data.postConnection.edges);
     return {
       props: {
         posts: postsResult.data.postConnection.edges,

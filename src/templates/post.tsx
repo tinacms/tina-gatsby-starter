@@ -42,8 +42,6 @@ export async function getServerData({ pageContext }: any) {
     const postData = await client.queries.post({
       relativePath: pageContext.relativePath,
     });
-
-    console.log("postData",postData);
     // Return postData directly - it already has { query, variables, data } structure
     // Component expects serverData.query, serverData.variables, serverData.data
     return postData;
