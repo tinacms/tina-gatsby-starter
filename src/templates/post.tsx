@@ -7,9 +7,9 @@ import Layout from "../components/layout";
 
 const PostTemplate = ({ serverData }: any) => {
   const { data } = useTina({
-    query: serverData.query,
-    variables: serverData.variables,
-    data: serverData.data,
+    query: serverData?.query,
+    variables: serverData?.variables,
+    data: serverData?.data,
   });
 
   return (
@@ -38,9 +38,15 @@ const PostTemplate = ({ serverData }: any) => {
 export default PostTemplate;
 
 export async function getServerData({ pageContext }: any) {
-  const postData = await client.queries.post({
-    relativePath: pageContext.relativePath,
-  });
-
-  return { props: postData };
+  try {
+    const postData = await client.queries.post({
+      relativePath: pageContext.relativePath,
+    });
+    // Return postData directly - it already has { query, variables, data } structure
+    // Component expects serverData.query, serverData.variables, serverData.data
+    return postData;
+  } catch (error: any) {
+    console.error("Error fetching post:", error);
+    throw error;
+  }
 }
