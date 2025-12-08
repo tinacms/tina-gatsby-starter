@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "tinacms dev -c \"gatsby develop\"",
     "start": "gatsby develop",
-    "build": "gatsby clean && tinacms build && gatsby build",
+    "build": "gatsby clean && tinacms build --no-client-build-cache && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"
