@@ -7,4 +7,3 @@ src/gatsby-types.d.ts
 .yarn
 *-lock.*
 *.lock
-!pnpm-lock.yaml
